@@ -1,3 +1,18 @@
+# Windows
+Thumbs.db
+
+# Node modules (if used for tools like live-server or build processes)
 node_modules/
-.DS_Store
+
+# Build output
+dist/
+build/
+
+# Logs
 *.log
+
+# VSCode settings
+.vscode/
+
+# Environment files
+.env
