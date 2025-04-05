@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle" />
+      <span class="slider round"></span>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+
+  <div class="container">
+    <h2>QR Code Generator</h2>
+
+    <label>Data Type:</label>
+    <select id="dataType">
+      <option value="text">Text/URL</option>
+      <option value="vcard">vCard</option>
+      <option value="wifi">Wi-Fi</option>
+    </select>
+
+    <div id="inputFields">
+      <input type="text" id="qrText" placeholder="Enter text or URL" />
+    </div>
+
+    <div class="options">
+      <label>Size:</label>
+      <select id="qrSize">
+        <option value="150x150">150x150</option>
+        <option value="200x200">200x200</option>
+        <option value="250x250" selected>250x250</option>
+        <option value="300x300">300x300</option>
+      </select>
+
+      <label>FG Color:</label>
+      <input type="color" id="fgColor" value="#000000" />
+
+      <label>BG Color:</label>
+      <input type="color" id="bgColor" value="#ffffff" />
+    </div>
+
+    <button onclick="generateQR()">Generate QR</button>
+
+    <div class="imgBox" id="imgBox">
+      <img id="qrImage" src="" alt="QR Code" />
+      <a id="downloadBtn" href="#" download="qr-code.png">Download</a>
+      <button onclick="saveAsPDF()">Save as PDF</button>
+      <div class="share-buttons">
+        <button onclick="shareWhatsApp()">WhatsApp</button>
+        <button onclick="shareEmail()">Email</button>
+      </div>
+    </div>
+
+    <h3>History</h3>
+    <ul id="historyList"></ul>
+    <button onclick="clearHistory()" class="clear-btn">Clear History</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.7/minified/html5-qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
